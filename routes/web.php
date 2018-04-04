@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/error-test', function() {
+    Log::info('calling the error route');
+
+    throw new \Exception('something unexpected broke');
+});
